@@ -7,7 +7,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Nick"');
 <html>
 <head>
     <title>Releases - HELL INTERFACING</title>
-    <link rel="stylesheet" type="text/css" href="css/releasestyle.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
