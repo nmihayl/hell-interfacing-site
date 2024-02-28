@@ -10,7 +10,7 @@ $results = $connection->query('SELECT * FROM Label');
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-32x32.png">
 </head>
 <body>
@@ -27,10 +27,8 @@ $results = $connection->query('SELECT * FROM Label');
             echo '<table>';
             echo '
             <tr>
-            <td>Cover Art</td>
-            <td>Artist</td>
-            <td>Title</td>
-            <td>Release Date</td>
+            <td>Release</td>
+            <td>Date</td>
             <td>Type</td>
             <td>Catalog Number</td>
             <td>Format</td>
@@ -40,9 +38,7 @@ $results = $connection->query('SELECT * FROM Label');
             while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
                 echo '<tr>';
                 echo '
-                    <td><img src="media/releases/' . $row['Cat'] . '.jpg" width="200px"></td>
-                    <td>' . $row['Alias'] . '</td>
-                    <td>' . $row['ReleaseName'] . '</td>
+                    <td><img src="media/releases/' . $row['Cat'] . '.jpg" width="200px"> <b> ' . $row['Alias'] . ' </b> <br> ' . $row['ReleaseName'] . ' </td>
                     <td>' . $row['ReleaseDate'] . '</td>
                     <td>' . $row['ReleaseType'] . '</td>
                     <td>' . $row['Cat'] . '</td>

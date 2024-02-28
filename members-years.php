@@ -27,10 +27,8 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Years"');
         echo '<table>';
         echo '
         <tr>
-        <td>Cover Art</td>
-        <td>Artist</td>
-        <td>Title</td>
-        <td>Release Date</td>
+        <td>Release</td>
+        <td>Date</td>
         <td>Type</td>
         <td>Catalog Number</td>
         <td>Format</td>
@@ -40,9 +38,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Years"');
         while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
             echo '<tr>';
             echo '
-                <td><img src="media/releases/' . $row['Cat'] . '.jpg" width="200px"></td>
-                <td>' . $row['Alias'] . '</td>
-                <td>' . $row['ReleaseName'] . '</td>
+            <td><img src="media/releases/' . $row['Cat'] . '.jpg" width="200px"> <b> ' . $row['Alias'] . ' </b> <br> ' . $row['ReleaseName'] . ' </td>
                 <td>' . $row['ReleaseDate'] . '</td>
                 <td>' . $row['ReleaseType'] . '</td>
                 <td>' . $row['Cat'] . '</td>

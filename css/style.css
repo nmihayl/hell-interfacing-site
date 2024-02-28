@@ -93,6 +93,18 @@ em {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
 }
 
+.memberImage {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
+    display: block;
+    margin: auto;
+    scale: 75%;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
 table {
     background-color: #3a83a5;
     color: #ffffff;
@@ -167,8 +179,8 @@ img {
 
 .sticky-button {
     position: fixed;
-    top: 20px; /* Adjust as needed */
-    left: 20px; /* Adjust as needed */
+    top: 30px; /* Adjust as needed */
+    left: 16px; /* Adjust as needed */
     background-color: #285b72af;
     color: white;
     padding: 10px 20px;
@@ -206,6 +218,7 @@ img {
 
 .member-table {
     overflow-x: auto;
+    width: 90%;
 }
 
 /* Firefox < 16 */
