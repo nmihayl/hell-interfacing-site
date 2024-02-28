@@ -6,3 +6,7 @@ This repository hosts the files for the netlabel site. Currently, it consists of
 - Artist member listing with individual releases pages
 
 An about page is to be added to the available sections.
+
+At the moment, the website is hosted and accessible here:
+
+<https://hi.helliolab.giize.com/>
