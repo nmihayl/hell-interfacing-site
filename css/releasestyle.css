@@ -1,0 +1,208 @@
+body {
+    background-color: #4eafdb;
+    margin: auto;
+    width: auto;
+}
+
+@font-face {
+    font-family: 'typeface';
+    src: url("../fonts/typeface.otf");
+    font-style: normal;
+}
+
+title {
+	color: #ffffff;  
+    margin-left: 15px;
+    font-family: 'typeface';
+    text-align: center
+}
+
+h1 {
+    color: #ffffff;
+    margin-left: 15px;
+    font-family: 'typeface';
+    text-align: center
+}
+
+h2 {
+	color: #ffffff;  
+    margin-left: 15px;
+    text-align: center
+}
+
+h3 {
+	color: #ffffff;  
+    margin-left: 15px;
+    text-align: center
+}
+
+p {
+	color: #ffffff;  
+    margin-left: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+div {
+    color: #ffffff;
+    text-align: center;
+}
+
+img {
+    display: inline-block;
+    margin: auto;
+    scale: 75%;
+}
+
+a {
+    color: #ffffff;
+    margin-left: auto;
+    text-align: center;
+    font-family: 'typeface';
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+table {
+    background-color: #3a83a5;
+    color: #ffffff;
+    font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+    box-shadow: 0 6px 60px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-collapse: collapse;
+    display: table;
+    table-layout: auto;
+    width: 50%;
+    margin: auto;
+    backdrop-filter: blur(10px);
+}
+
+tr:hover {
+    background-color: #7cbcda;
+    transition: 0.2s;
+}
+
+td,
+th {
+    border: 1px solid #ffffff;
+    padding: 0.5rem;
+    font-size: 20px;
+    text-shadow: 2px 2px #0000002c;
+    border-color: #ffffff33;
+    width: 50%;
+    font-size: 85%;
+}
+
+hr {
+    color: #ffffff;
+    width: 750px;
+}
+
+nav {
+    padding: 2px;
+    margin: auto;
+    text-align: center;
+    font-family: 'typeface';
+}
+
+img {
+    -webkit-animation: fadein 1s;
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 1s;
+    /* Firefox < 16 */
+    -ms-animation: fadein 1s;
+    /* Internet Explorer */
+    -o-animation: fadein 1s;
+    /* Opera < 12.1 */
+    animation: fadein 1s;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+    scale: 65%;
+    vertical-align: middle;
+}
+
+.streaming {
+    width: 50px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.sticky-button {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    background-color: #285b72af;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 10px;
+}
+
+.sticky-button:hover {
+    transition: 0.2s;
+    background-color: #4196bd62;
+}
+
+.logo {
+    vertical-align: middle; /* Align the image vertically */
+    margin-right: 10px; /* Add some spacing between the image and text */
+    width: 60px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+.baller {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999; /* Ensure it's above other content */
+    width: 150px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
