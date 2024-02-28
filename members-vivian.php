@@ -51,18 +51,18 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Vivian"');
             
                 // Check if Bandcamp link exists
                 if (!empty($row['StreamBC'])) {
-                    echo '<a href="' . $row['StreamBC'] . '" target="_blank"><img src="media/bandcamp.png" width="50px"></a>';
+                    echo '<a href="' . $row['StreamBC'] . '" target="_blank"><img class="streaming" src="media/bandcamp.png" width="50px"></a>';
                 }
                 // Check if Spotify link exists
                 if (!empty($row['StreamS'])) {
-                    echo '<a href="' . $row['StreamS'] . '" target="_blank"><img src="media/spotify.png" width="50px"></a>';
+                    echo '<a href="' . $row['StreamS'] . '" target="_blank"><img class="streaming" src="media/spotify.png" width="50px"></a>';
                 }
                 // Check if Apple Music link exists
                 if (!empty($row['StreamAM'])) {
-                    echo '<a href="' . $row['StreamAM'] . '" target="_blank"><img src="media/applemusic.png" width="50px"></a>';
+                    echo '<a href="' . $row['StreamAM'] . '" target="_blank"><img class="streaming" src="media/applemusic.png" width="50px"></a>';
                 }
                 echo '</td>
-                    <th><a href="' . $row['RYM'] . '" target="_blank"><img src="media/rym.png" width="50px"></a></th>
+                    <th><a href="' . $row['RYM'] . '" target="_blank"><img class="streaming" src="media/rym.png" width="50px"></a></th>
                 ';
                 echo '</tr>';
             }
