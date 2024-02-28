@@ -151,6 +151,7 @@ img {
     text-decoration: none;
     border-radius: 5px;
     font-size: 10px;
+    transform: rotate(-90deg);
 }
 
 .sticky-button:hover {
@@ -166,12 +167,21 @@ img {
 }
 
 .baller {
-    position: fixed;
     top: 0;
     right: 0;
     z-index: 999; /* Ensure it's above other content */
     width: 150px;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 59px;
+}
+
+.release-table {
+    overflow-x: auto;
+}
+
+.member-table {
+    overflow-x: auto;
 }
 
 /* Firefox < 16 */

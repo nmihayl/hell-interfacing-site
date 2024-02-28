@@ -18,8 +18,10 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Vivian"');
 </header>
 <main>
     <h1>
-    <img src="favicon-32x32.png" alt="logo" class="logo">
-    RELEASES</h1>
+        <img src="favicon-32x32.png" alt="logo" class="logo">
+        RELEASES
+        <img src="media/baller.png" alt="Fixed Image" class="baller">
+    </h1>
     <div class="release-table">
         <?php
         echo '<table>';
@@ -70,9 +72,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Vivian"');
 </main>
     <footer>
         <br>
-        <a class="sticky-button" href="members.html">Return to members</a>
-        <br>
-        <img src="media/baller.png" alt="Fixed Image" class="baller">
+        <a class="sticky-button" href="members.html">Return</a>
         <br>
     </footer>
 </body>

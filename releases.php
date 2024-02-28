@@ -19,7 +19,9 @@ $results = $connection->query('SELECT * FROM Label');
     <main>
         <h1>
         <img src="favicon-32x32.png" alt="logo" class="logo">
-        RELEASES</h1>
+            RELEASES
+            <img src="media/baller.png" alt="Fixed Image" class="baller">
+        </h1>
         <div class="release-table">
             <?php
             echo '<table>';
@@ -72,9 +74,7 @@ $results = $connection->query('SELECT * FROM Label');
     </main>
     <footer>
         <br>
-        <a class="sticky-button" href="index.html">Return to index</a>
-        <br>
-        <img src="media/baller.png" alt="Fixed Image" class="baller">
+        <a class="sticky-button" href="index.html">Return</a>
         <br>
     </footer>
 </body>
