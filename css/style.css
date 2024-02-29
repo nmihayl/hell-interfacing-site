@@ -99,7 +99,7 @@ em {
          animation: fadein 2s;
     display: block;
     margin: auto;
-    scale: 75%;
+    scale: 100%;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -112,7 +112,7 @@ table {
     border-collapse: collapse;
     display: table;
     table-layout: auto;
-    width: 50%;
+    width: 70%;
     margin: auto;
     backdrop-filter: blur(10px);
 }
@@ -156,13 +156,14 @@ img {
     /* Opera < 12.1 */
     animation: fadein 1s;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-    scale: 75%;
+    scale: 95%;
     vertical-align: middle;
 }
 
 .streaming {
     width: 50px;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+    scale: 75%;
 }
 
 @keyframes fadein {
