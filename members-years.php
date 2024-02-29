@@ -18,7 +18,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Years"');
 </header>
 <main>
     <h1>
-    <a href="members.html"><img src="media/placeholder.png" alt="logo" class="logo"></a>
+    <a href="members.html"><img src="media/back.png" alt="logo" class="logo"></a>
         RELEASES
         <img src="media/baller.png" alt="Fixed Image" class="baller">
     </h1>

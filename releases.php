@@ -17,7 +17,7 @@ $results = $connection->query('SELECT * FROM Label');
     </header>
     <main>
         <h1>
-        <a href="index.html"><img src="media/placeholder.png" href="index.html" alt="logo" class="logo"></a>
+        <a href="index.html"><img src="media/back.png" href="index.html" alt="logo" class="logo"></a>
             RELEASES
             <img src="media/baller.png" alt="Fixed Image" class="baller">
         </h1>
