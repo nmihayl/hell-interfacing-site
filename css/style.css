@@ -1,7 +1,7 @@
 body {
     background-color: #4eafdb;
     margin: auto;
-    width: 800px;
+    width: auto;
 }
 
 @font-face {
@@ -12,7 +12,6 @@ body {
 
 title {
     color: #ffffff;
-    margin-left: 15px;
     font-family: 'typeface';
     text-align: center
 }
@@ -28,7 +27,6 @@ h1 {
 
 h2 {
     color: #ffffff;
-    margin-left: 15px;
     text-align: center
 }
 
@@ -42,7 +40,7 @@ p {
 
 div {
     color: #ffffff;
-    margin-left: 15px;
+    margin-left: auto;
     text-align: center;
 }
 
@@ -158,7 +156,7 @@ img {
     /* Opera < 12.1 */
     animation: fadein 1s;
     box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
-    scale: 65%;
+    scale: 75%;
     vertical-align: middle;
 }
 
@@ -177,10 +175,26 @@ img {
     }
 }
 
+
+/* Mobile/Tablet styles */
+@media screen and (max-width: 768px) {
+    .desktop-table {
+        display: none; /* Hide desktop table on small screens */
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 769px) {
+    .mobile-table {
+        display: none; /* Hide mobile/tablet table on larger screens */
+    }
+}
+
+
 .sticky-button {
     position: fixed;
-    top: 30px; /* Adjust as needed */
-    left: 16px; /* Adjust as needed */
+    top: 30px;
+    left: 0px;
     background-color: #285b72af;
     color: white;
     padding: 10px 20px;
@@ -218,7 +232,6 @@ img {
 
 .member-table {
     overflow-x: auto;
-    width: 90%;
 }
 
 /* Firefox < 16 */
