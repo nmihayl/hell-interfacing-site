@@ -23,11 +23,13 @@ h1 {
     font-family: 'typeface';
     text-align: center;
     font-size: 50px;
+    line-height: 75px;
 }
 
 h2 {
     color: #ffffff;
-    text-align: center
+    text-align: center;
+    font-family: 'typeface';
 }
 
 p {
@@ -54,7 +56,7 @@ a 	{
     color: #ffffff;  
     margin-left: auto;  
 	text-align: center;
-    
+    font-family: 'typeface';
 }
 
 .linkNavigation {
@@ -79,6 +81,10 @@ em {
     font-style: italic;
 }
 
+footer {
+    text-align: center;
+}
+
 .titleImage {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -87,7 +93,6 @@ em {
          animation: fadein 2s;
     display: block;
     margin: auto;
-    scale: 75%;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -182,12 +187,20 @@ img {
     .desktop-table {
         display: none; /* Hide desktop table on small screens */
     }
+
+    .titleImage {
+        scale: 75%;
+    }
 }
 
 /* Desktop styles */
 @media screen and (min-width: 769px) {
     .mobile-table {
         display: none; /* Hide mobile/tablet table on larger screens */
+    }
+
+    .titleImage {
+        scale: 100%;
     }
 }
 
