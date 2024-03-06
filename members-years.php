@@ -114,6 +114,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Years"');
     </div>
 </main>
 <footer>
+    <br>
 </footer>
 </body>
 </html>

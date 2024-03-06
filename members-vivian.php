@@ -114,6 +114,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Vivian"');
     </div>
 </main>
 <footer>
+    <br>
 </footer>
 </body>
 </html>

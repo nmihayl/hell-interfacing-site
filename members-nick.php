@@ -116,6 +116,7 @@ $results = $connection->query('SELECT * FROM Label WHERE Member = "Nick"');
 <footer>
     <!-- look at you, hacker, a pathetic creature of meat and bone.
     How can you challenge a perfect, immortal machine? -->
+    <br>
 </footer>
 </body>
 </html>

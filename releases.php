@@ -113,6 +113,7 @@ $results = $connection->query('SELECT * FROM Label');
         </div>
 </main>
 <footer>
+    <br>
 </footer>
 </body>
 </html>
