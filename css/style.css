@@ -85,6 +85,11 @@ footer {
     text-align: center;
 }
 
+code {
+    font-family: 'JetBrains Mono';
+    font-size: 15px;
+}
+
 .titleImage {
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s; /* Firefox < 16 */
