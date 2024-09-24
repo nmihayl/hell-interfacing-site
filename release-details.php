@@ -1,9 +1,11 @@
 <?php
 $connection = new SQLite3('releases.db');
 
+// Get 'cat' and 'MemberName' from the URL parameters
 $cat = isset($_GET['cat']) ? $_GET['cat'] : '';
 $memberName = isset($_GET['MemberName']) ? $_GET['MemberName'] : '';
 
+// Modify the release query to allow filtering by MemberName if provided
 $releaseQuery = '
 SELECT
     r.Cat,
@@ -24,26 +26,32 @@ LEFT JOIN ReleaseFormats rf ON r.Cat = rf.ReleaseCat
 LEFT JOIN Formats f ON rf.FormatID = f.FormatID
 WHERE 1=1 ';
 
+// If 'cat' is provided, filter by 'Cat'
 if (!empty($cat)) {
     $releaseQuery .= ' AND r.Cat = :cat';
 }
 
+// If 'MemberName' is provided, filter by 'MemberName'
 if (!empty($memberName)) {
     $releaseQuery .= ' AND a.MemberName = :memberName';
 }
 
 $releaseQuery .= ' GROUP BY r.Cat';
 
+// Prepare the statement
 $statement = $connection->prepare($releaseQuery);
 
+// Bind 'cat' if it's set
 if (!empty($cat)) {
     $statement->bindValue(':cat', $cat, SQLITE3_TEXT);
 }
 
+// Bind 'MemberName' if it's set
 if (!empty($memberName)) {
     $statement->bindValue(':memberName', $memberName, SQLITE3_TEXT);
 }
 
+// Execute the query and fetch the results
 $releaseResult = $statement->execute()->fetchArray(SQLITE3_ASSOC);
 
 $trackQuery = '
@@ -71,6 +79,7 @@ $totalDurationResult = $totalDurationStatement->execute()->fetchArray(SQLITE3_AS
 $totalDurationFormatted = gmdate("H:i:s", $totalDurationResult['TotalDuration']);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,31 +93,57 @@ $totalDurationFormatted = gmdate("H:i:s", $totalDurationResult['TotalDuration'])
     <a href="releases.php" class="linkNavigation">Return</a>
 </header>
 <main>
-    <h1><?php echo htmlspecialchars($releaseResult['ArtistName']) . ' - ' . htmlspecialchars($releaseResult['Title']); ?></h1>
+    <h1><?php echo $releaseResult['ArtistName'] . ' - ' . $releaseResult['Title']; ?></h1>
 
+    <!-- Original Table Version -->
     <table class="desktop-table">
         <tr>
-            <td class="cover-cell">
+            <td style="width: 300px; text-align: center;">
                 <img src="media/releases/<?php echo htmlspecialchars($releaseResult['Cat']); ?>.jpg" class="titleImage" alt="Cover Art">
             </td>
         </tr>
     </table>
 
-    <table class="desktop-table streaming-table">
+    <table class="desktop-table">
         <tr>
             <?php if (!empty($releaseResult['StreamBC'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamBC']); ?>" target="_blank">
-                        <img class="streaming" src="media/bandcamp.png" alt="Bandcamp"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamBC']); ?>" target="_blank">
+                        <img class="streaming" src="media/bandcamp.png" alt="Bandcamp">
+                    </a>
                 </td>
             <?php endif; ?>
             <?php if (!empty($releaseResult['StreamS'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamS']); ?>" target="_blank">
-                        <img class="streaming" src="media/spotify.png" alt="Spotify"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamS']); ?>" target="_blank">
+                        <img class="streaming" src="media/spotify.png" alt="Spotify">
+                    </a>
                 </td>
             <?php endif; ?>
             <?php if (!empty($releaseResult['StreamAM'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamAM']); ?>" target="_blank">
-                        <img class="streaming" src="media/applemusic.png" alt="Apple Music"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamAM']); ?>" target="_blank">
+                        <img class="streaming" src="media/applemusic.png" alt="Apple Music">
+                    </a>
+                </td>
+            <?php endif; ?>
+        </tr>
+    </table>
+
+    <table class="desktop-table">
+        <tr>
+            <?php if (!empty($releaseResult['MetaRYM'])): ?>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['MetaRYM']); ?>" target="_blank">
+                        <img class="streaming" src="media/rym.png" alt="RateYourMusic">
+                    </a>
+                </td>
+            <?php endif; ?>
+            <?php if (!empty($releaseResult['MetaMB'])): ?>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['MetaMB']); ?>" target="_blank">
+                        <img class="streaming" src="media/mb.png" alt="MusicBrainz">
+                    </a>
                 </td>
             <?php endif; ?>
         </tr>
@@ -152,30 +187,55 @@ $totalDurationFormatted = gmdate("H:i:s", $totalDurationResult['TotalDuration'])
         <?php endwhile; ?>
     </table>
 
-    <!-- Mobile Version -->
+    <!-- Duplicate Table Version with .mobile-table Class -->
     <table class="mobile-table">
         <tr>
-            <td class="cover-cell">
+            <td style="width: 300px; text-align: center;">
                 <img src="media/releases/<?php echo htmlspecialchars($releaseResult['Cat']); ?>.jpg" class="titleImage" alt="Cover Art">
             </td>
         </tr>
     </table>
 
-    <table class="mobile-table streaming-table">
+    <table class="mobile-table">
         <tr>
             <?php if (!empty($releaseResult['StreamBC'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamBC']); ?>" target="_blank">
-                        <img class="streaming" src="media/bandcamp.png" alt="Bandcamp"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamBC']); ?>" target="_blank">
+                        <img class="streaming" src="media/bandcamp.png" alt="Bandcamp">
+                    </a>
                 </td>
             <?php endif; ?>
             <?php if (!empty($releaseResult['StreamS'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamS']); ?>" target="_blank">
-                        <img class="streaming" src="media/spotify.png" alt="Spotify"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamS']); ?>" target="_blank">
+                        <img class="streaming" src="media/spotify.png" alt="Spotify">
+                    </a>
                 </td>
             <?php endif; ?>
             <?php if (!empty($releaseResult['StreamAM'])): ?>
-                <td><a href="<?php echo htmlspecialchars($releaseResult['StreamAM']); ?>" target="_blank">
-                        <img class="streaming" src="media/applemusic.png" alt="Apple Music"></a>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['StreamAM']); ?>" target="_blank">
+                        <img class="streaming" src="media/applemusic.png" alt="Apple Music">
+                    </a>
+                </td>
+            <?php endif; ?>
+        </tr>
+    </table>
+
+    <table class="mobile-table">
+        <tr>
+            <?php if (!empty($releaseResult['MetaRYM'])): ?>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['MetaRYM']); ?>" target="_blank">
+                        <img class="streaming" src="media/rym.png" alt="RateYourMusic">
+                    </a>
+                </td>
+            <?php endif; ?>
+            <?php if (!empty($releaseResult['MetaMB'])): ?>
+                <td style="text-align: center;">
+                    <a href="<?php echo htmlspecialchars($releaseResult['MetaMB']); ?>" target="_blank">
+                        <img class="streaming" src="media/mb.png" alt="MusicBrainz">
+                    </a>
                 </td>
             <?php endif; ?>
         </tr>
@@ -221,6 +281,7 @@ $totalDurationFormatted = gmdate("H:i:s", $totalDurationResult['TotalDuration'])
             </tr>
         <?php endwhile; ?>
     </table>
+
 </main>
 
 <footer>
