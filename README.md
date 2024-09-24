@@ -10,6 +10,3 @@ At the moment, the website is hosted and accessible here:
 
 <https://hi.helliolab.giize.com/>
 
-The development version of the site is available here:
-
-<https://ngtest.helliolab.giize.com/>
