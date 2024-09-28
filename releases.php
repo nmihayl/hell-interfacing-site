@@ -54,10 +54,12 @@ while ($row = $results->fetchArray(SQLITE3_ASSOC)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Releases - HELL INTERFACING</title>
+    <title>Releases | HELL INTERFACING</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 </head>
 <body>
 <header>
